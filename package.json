@@ -1,0 +1,15 @@
+{
+  "name": "@lumjs/core",
+  "version": "1.0.0-beta.1",
+  "main": "index.js",
+  "license": "MIT",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/supernovus/lum.core.js.git"
+  },
+  "devDependencies":
+  {
+    "@lumjs/tests": "^1.0.0"
+  }
+}
