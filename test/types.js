@@ -3,7 +3,7 @@ const plan = 91;
 // A new test instance.
 const t = require('@lumjs/tests').new({module, plan});
 // The types core module
-const types = require('../index').types;
+const types = require('../lib/types');
 
 // And a quick reference to the type names.
 const TYP = types.TYPES;

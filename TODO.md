@@ -1,6 +1,7 @@
 # TODO
 
 - Proper tests using new [@lumjs/tests](https://github.com/supernovus/lum.tests.js) library.
+  - [ ] `index`
   - [x] `types`
   - [ ] `context`
   - [ ] `strings`

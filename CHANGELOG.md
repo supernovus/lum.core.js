@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-beta.2] - 2022-07-08
+## Changed
+- Renamed `src` to `lib` as we're not compiling/transpiling this code.
+- Moved `index.js` into `lib` with the rest of the module files.
+- Added `modules.js` with a method for generating a name/id for a module.
+- Added `isSearch()`,`isReplacement()`, and `replaceItems()` to `strings.js`.
+
 ## [1.0.0-beta.1] - 2022-07-07
 ### Added
 - Initial release.
@@ -13,5 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactored and reorganized the libraries a lot.
 
 [Unreleased]: https://github.com/supernovus/lum.core.js/compare/v1.0.0-beta.1...HEAD
+[1.0.0-beta.2]: https://github.com/supernovus/lum.core.js/compare/v1.0.0-beta.1...v1.0.0-beta.2
 [1.0.0-beta.1]: https://github.com/supernovus/lum.core.js/releases/tag/v1.0.0-beta.1
 
