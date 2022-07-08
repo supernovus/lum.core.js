@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0-beta.1] - 2022-07-01
+## [1.0.0-beta.1] - 2022-07-07
 ### Added
 - Initial release.
 - Pulled a bunch of the core libraries from the old Lum.js project.
