@@ -1,5 +1,5 @@
 // Current test count.
-const plan = 91;
+const plan = 85;
 // A new test instance.
 const t = require('@lumjs/tests').new({module, plan});
 // The types core module
@@ -151,15 +151,6 @@ testIsType(
   [TYP.PROP, null],
 ], true);
 
-t.ok(types.containsAny(['hello','world'], 'world'), 'containsAny([a], a)');
-t.ok(!types.containsAny(['hello','world'], 'universe'), '!containsAny([a], b)');
-t.ok(types.containsAll(['hello','darkness','my','old','friend'], 'hello', 'friend'), 'containsAll([a,b,c], a, c)');
-t.ok(!types.containsAll(['nothing','to','see'], 'nothing', 'here'), '!containsAll([a,b,c], a, d)');
-
-const arr = ['hello', 'darkness', 'my', 'old', 'friend'];
-types.removeFromArray(arr, 'darkness');
-t.isJSON(arr, ['hello','my','old','friend'], 'removeFromArray(...)');
-
 (function(){ t.ok(types.unbound(this), 'unbound(unboundThis)'); })();
 (function(){ t.ok(!types.unbound(this), '!unbound(boundThis)') }).bind({})();
 typesInstance.notUnbound();
@@ -176,9 +167,12 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
   t.is(obj.test1, 'Test 1', 'def(obj, name, value)');
   types.def(obj)('test2', 'Test 2');
   t.is(obj.test2, 'Test 2', 'def(obj)(name, value)');
+  
+  // TODO: new accessor assignment options.
+
 }
 
-t.dies(()=>types.NYI(), 'NYI()');
+// TODO: isa() and needs()
 
 // All done.
 t.output();

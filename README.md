@@ -6,9 +6,14 @@ and work in CommonJS/Node.js and modern browsers without any modifications.
 
 Used by all the rest of my *Lum.js* libraries.
 
-## Exports
+## Documentation
 
-TODO: a brief summary of the exports.
+I am working on fleshing out the documentation in `jsdoc3` format.
+You can compile the unfinished version using `jsdoc -c ./jsdoc.json` 
+which will put the generated docs into the `./docs/api` folder.
+
+### [Changelog](CHANGELOG.md)
+### [TODO](TODO.md)
 
 ## Official URLs
 

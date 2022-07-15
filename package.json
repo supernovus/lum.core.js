@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.4",
   "main": "lib/index.js",
   "license": "MIT",
   "repository":
@@ -11,5 +11,10 @@
   "devDependencies":
   {
     "@lumjs/tests": "^1.0.0"
+  },
+  "scripts":
+  {
+    "-TODO-1": "Use `lumtest` once its available",
+    "test": "prove -e node --ext js ./test"
   }
 }
