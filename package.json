@@ -1,7 +1,23 @@
 {
   "name": "@lumjs/core",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "main": "lib/index.js",
+  "exports":
+  {
+    ".": "./lib/index.js",
+    "./types": "./lib/types/index.js",
+    "./arrays": "./lib/arrays.js",
+    "./context": "./lib/context.js",
+    "./strings": "./lib/strings.js",
+    "./flags": "./lib/flags.js",
+    "./obj": "./lib/obj/index.js",
+    "./opt": "./lib/opt.js",
+    "./modules": "./lib/moduless.js",
+    "./meta": "./lib/meta.js",
+    "./enum": "./lib/enum.js",
+    "./observable": "./lib/observable.js",
+    "./package.json": "./package.json"
+  },
   "license": "MIT",
   "repository":
   {
@@ -10,11 +26,13 @@
   },
   "devDependencies":
   {
-    "@lumjs/tests": "^1.0.0"
+    "@lumjs/tests": "^1.0.0",
+    "jsdoc": "^3.6.10"
   },
   "scripts":
   {
     "-TODO-1": "Use `lumtest` once its available",
-    "test": "prove -e node --ext js ./test"
+    "test": "prove -e node --ext js ./test",
+    "build-docs": "jsdoc -c ./jsdoc.json"
   }
 }

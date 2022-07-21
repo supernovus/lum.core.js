@@ -5,16 +5,10 @@ const t = require('@lumjs/tests').new({module, plan});
 // The types core module
 const types = require('../lib/types');
 
-// And a quick reference to the type names.
+// A quick reference to the type names.
 const TYP = types.TYPES;
-
-// Helper function.
-function stringify (what)
-{
-  if (typeof what === TYP.F) return what.toString();
-  if (typeof what === TYP.SY) return what.constructor.toString();
-  return JSON.stringify(what);
-}
+// And the stringify function.
+const stringify = types.stringify;
 
 // Now for some further basics.
 t.ok(types.isObj({}), 'isObj({})');
@@ -126,7 +120,7 @@ testIsType(
   [TYP.SCALAR, true],
   [TYP.SCALAR, 'hi'],
   [TYP.PROP, 'woah'],
-  [TYP.PROP, Symbol('woah'), TYP.PROP+',Symbol'],
+  [TYP.PROP, Symbol('woah')],
 ]);
 
 testIsType(
@@ -173,6 +167,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
 }
 
 // TODO: isa() and needs()
+// TODO: stringify()
 
 // All done.
 t.output();

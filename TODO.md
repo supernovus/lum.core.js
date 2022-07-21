@@ -10,6 +10,7 @@
   - [ ] `types/needs`
   - [ ] `types/def`
   - [ ] `types/typelist`
+  - [ ] `types/stringify`
   - [ ] `types/index`
   - [x] `arrays`
   - [ ] `context`
@@ -29,7 +30,7 @@
   - [ ] `lazy`
   - [ ] `observable`
   - [ ] `index`
-- Finish the documentation marked as *TODO*.
+- -Finish the documentation marked as *TODO*.-
 - Create new `Changelog-1.x.md` and make it the active `CHANGELOG.md` link.
 
 ## Future

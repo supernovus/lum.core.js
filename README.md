@@ -8,8 +8,11 @@ Used by all the rest of my *Lum.js* libraries.
 
 ## Documentation
 
-I am working on fleshing out the documentation in `jsdoc3` format.
-You can compile the unfinished version using `jsdoc -c ./jsdoc.json` 
+### [API Docs](https://supernovus.github.io/docs/js/@lumjs/core/)
+
+The documentation is written in [JSDoc 3](https://jsdoc.app/) format.
+
+You can compile the documentation using `npm run build-docs`
 which will put the generated docs into the `./docs/api` folder.
 
 ### [Changelog](CHANGELOG.md)
