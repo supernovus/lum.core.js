@@ -1,1 +1,1 @@
-docs/changelogs/1.0-beta.md
+docs/changelogs/1.x.md
