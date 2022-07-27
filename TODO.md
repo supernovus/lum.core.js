@@ -6,12 +6,12 @@
   - [x] `types/js`
   - [x] `types/basics` 
   - [x] `types/root`
-  - [ ] `types/isa`
-  - [ ] `types/needs`
-  - [ ] `types/def`
-  - [ ] `types/typelist`
+  - [x] `types/isa`
+  - [x] `types/needs`
+  - [x] `types/def`
+  - [x] `types/typelist`
   - [ ] `types/stringify`
-  - [ ] `types/index`
+  - [x] `types/index`
   - [x] `arrays`
   - [ ] `context`
   - [ ] `strings`

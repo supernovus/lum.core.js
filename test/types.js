@@ -49,10 +49,16 @@ class SubtypeClass extends TypeClass {}
 const typesInstance = new TypeClass();
 const subtypeInstance = new SubtypeClass();
 
+class DifferentClass {}
+
+const differentInstance = new DifferentClass();
+
 t.ok(types.isInstance(typesInstance, TypeClass), 'isInstance(typeInstance,TypeClass)');
 t.ok(types.isInstance(subtypeInstance, SubtypeClass), 'isInstance(subtypeInstance, SubtypeClass)');
 t.ok(types.isInstance(subtypeInstance, TypeClass), 'isInstance(subtypeInstance, TypeClass)');
-t.ok(!types.isInstance(typesInstance, SubtypeClass), '!isInstance(typeInstance, SubtypeClass');
+t.ok(!types.isInstance(typesInstance, SubtypeClass), '!isInstance(typeInstance, SubtypeClass)');
+t.ok(!types.isInstance(differentInstance, TypeClass), '!isInstance(differentInstance, TypeClass)');
+t.ok(!types.isInstance(typesInstance, DifferentClass), '!isInstance(typesInstance, DifferentClass)');
 
 function doesDesc (tests, not=false)
 {
@@ -155,15 +161,103 @@ t.dies(function(){types.needObj(null); return true}, '!needObj(null)');
 t.ok((function(){types.needType(TYP.S, 'hi'); return true})(), "needType('string','hi')");
 t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object',null)");
 
+{ // Tests of isa() method.
+  let wants = [TYP.S, TYP.N];
+  t.ok(types.isa('hi', ...wants), 'isa(val, ...types)');
+  t.isa('hello', wants, ' ^ using Test.isa()');
+  t.isa(42, wants, ' ^ with second type');
+  t.ok(!types.isa({}, ...wants), '!isa(val, ...types)');
+  t.nota({}, wants, ' ^ using Test.nota()');
+
+  wants = [SubtypeClass, DifferentClass];
+  t.isa(subtypeInstance, wants, 'isa(val, ...classes)');
+  t.isa(differentInstance, wants, ' ^ with second class');
+  t.nota(typesInstance, wants, 'nota(val, ...classes)');
+
+  wants = [TYP.B, TypeClass];
+  t.isa(true, wants, 'isa() → with mixed types/classes');
+  t.isa(subtypeInstance, wants, ' ^ with second type/class');
+}
+
+{ // Tests of needs() method.
+  let needs = [TYP.S, TYP.N];
+  t.lives(() => types.needs('hi', ...needs), 'needs(val, ...types)');
+  t.lives(() => types.needs(42, ...needs), ' ^ with second type');
+  t.dies(() => types.needs({}, ...needs), ' ^ throws on failure');
+
+  needs = [SubtypeClass, DifferentClass];
+  t.lives(() => types.needs(subtypeInstance, ...needs), 'needs(val, ...classes)');
+  t.lives(() => types.needs(differentInstance, ...needs), ' ^ with second class');
+  t.dies(() => types.needs(typesInstance, ...needs), ' ^ throws on failure');
+
+  needs = [TYP.B, TypeClass];
+  t.lives(() => types.needs(true, ...needs), 'needs() → with mixed types/classes');
+  t.lives(() => types.needs(subtypeInstance, ...needs), ' ^ with second type/class');
+}
+
 { // Try a few versions of 'def'
   const obj = {};
   types.def(obj, 'test1', 'Test 1');
   t.is(obj.test1, 'Test 1', 'def(obj, name, value)');
   types.def(obj)('test2', 'Test 2');
   t.is(obj.test2, 'Test 2', 'def(obj)(name, value)');
-  
-  // TODO: new accessor assignment options.
+  obj.test2 = '2 Test';
+  t.is(obj.test2, 'Test 2', 'def() is read-only by default');
 
+  types.def(obj, true)('test3', 'Test 3');
+  t.is(Object.keys(obj).length, 1, 'def(obj, true)(...)');
+  
+  types.def(obj, 'a1', function()
+  { // Returning a different property.
+    return this.test2;
+  },
+  function(val)
+  { // Assigning to a different property.
+    this.$$ = val;
+  });
+
+  const gs = 'def(obj, name, getter, setter)';
+  t.is(obj.a1, 'Test 2', gs+'~getter');
+  obj.a1 = 'A1->$$';
+  t.is(obj.$$, 'A1->$$', gs+'~setter');
+
+  types.def(obj, 'test4', 'Test 4', {writable: true});
+  t.is(obj.test4, 'Test 4', 'def(..., {writable}) → added property');
+  obj.test4 = '4 Test';
+  t.is(obj.test4, '4 Test', ' ^ and it was writable');
+
+  const td = types.def(obj);
+  td('getOnly', {get: function() { return 'GETTER'; }});
+  obj.getOnly = 'blah blah blah';
+  t.is(obj.getOnly, 'GETTER', 'def(..., {get: getter}) → getter worked');
+  td('setOnly', {set: function(val) { this.__ = val; }});
+  obj.setOnly = 'SETTER';
+  t.is(obj.__, 'SETTER', 'def(..., {set: setter}) → setter worked');
+  t.is(obj.setOnly, undefined, ' ^ get is undefined');
+
+  td('foobar', {value: 'FOO BAR'});
+  t.is(obj.foobar, 'FOO BAR', 'def(..., {value})');
+
+  let anObj = {value: 'BAR FOO'};
+  td('barfoo', anObj, false);
+  t.is(obj.barfoo, anObj, 'def(..., descriptor, false) → assigned object as value');
+  
+  td('barfoo2', anObj);
+  t.is(anObj.configurable, true, 'def(..., descriptor) → descriptor is a reference');
+
+  anObj = {value: 'new test'};
+  td('barfoo3', anObj, true);
+
+  t.is(anObj.configurable, undefined, 'def(..., descriptor, true) → cloned descriptor');
+  t.is(obj.barfoo3, 'new test', ' ^ value was correct')
+
+  td(
+  {
+    hello: 'World',
+    goodbye: 'Universe',
+  });
+
+  t.ok((obj.hello === 'World' && obj.goodbye === 'Universe'), 'def(obj, {prop1: value1, prop2: value2})')
 }
 
 // TODO: isa() and needs()
