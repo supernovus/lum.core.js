@@ -15,7 +15,7 @@ The documentation is written in [JSDoc 3](https://jsdoc.app/) format.
 You can compile the documentation using `npm run build-docs`
 which will put the generated docs into the `./docs/api` folder.
 
-### [Changelog](CHANGELOG.md)
+### [Changelog](./docs/changelogs/1.0-beta.md)
 ### [TODO](TODO.md)
 
 ## Official URLs
