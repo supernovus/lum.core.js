@@ -1,5 +1,5 @@
 // Current test count.
-const plan = 85;
+const plan = 120;
 // A new test instance.
 const t = require('@lumjs/tests').new({module, plan});
 // The types core module
