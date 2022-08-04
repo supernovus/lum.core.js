@@ -12,7 +12,7 @@
     "./flags": "./lib/flags.js",
     "./obj": "./lib/obj/index.js",
     "./opt": "./lib/opt.js",
-    "./modules": "./lib/moduless.js",
+    "./modules": "./lib/modules.js",
     "./meta": "./lib/meta.js",
     "./enum": "./lib/enum.js",
     "./observable": "./lib/observable.js",
