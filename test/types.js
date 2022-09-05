@@ -264,5 +264,5 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
 // TODO: stringify()
 
 // All done.
-t.output();
+t.done();
 
