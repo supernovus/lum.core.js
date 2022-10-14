@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "main": "lib/index.js",
   "exports":
   {
@@ -12,6 +12,7 @@
     "./flags": "./lib/flags.js",
     "./obj": "./lib/obj/index.js",
     "./opt": "./lib/opt.js",
+    "./modulebuilder": "./lib/modulebuilder.js",
     "./modules": "./lib/modules.js",
     "./meta": "./lib/meta.js",
     "./enum": "./lib/enum.js",
