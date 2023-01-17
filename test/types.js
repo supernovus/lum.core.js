@@ -180,6 +180,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
 }
 
 { // Tests of needs() method.
+  types.console.handler = false;
   let needs = [TYP.S, TYP.N];
   t.lives(() => types.needs('hi', ...needs), 'needs(val, ...types)');
   t.lives(() => types.needs(42, ...needs), ' ^ with second type');
@@ -193,6 +194,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
   needs = [TYP.B, TypeClass];
   t.lives(() => types.needs(true, ...needs), 'needs() → with mixed types/classes');
   t.lives(() => types.needs(subtypeInstance, ...needs), ' ^ with second type/class');
+  types.console.handler = null;
 }
 
 { // Try a few versions of 'def'

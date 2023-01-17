@@ -15,5 +15,5 @@ arr.removeItems(a1, 'darkness');
 t.isJSON(a1, ['hello','my','old','friend'], 'removeFromArray(...)');
 
 // All done.
-t.output();
+t.done();
 

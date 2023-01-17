@@ -13,5 +13,5 @@ t.dies(()=>meta.NYI(), 'NYI()');
 // - Functions.*
 
 // All done.
-t.output();
+t.done();
 
