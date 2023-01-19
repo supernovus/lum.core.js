@@ -1,21 +1,23 @@
 {
   "name": "@lumjs/core",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "main": "lib/index.js",
   "exports":
   {
     ".": "./lib/index.js",
-    "./types": "./lib/types/index.js",
+
     "./arrays": "./lib/arrays.js",
     "./context": "./lib/context.js",
-    "./strings": "./lib/strings.js",
-    "./flags": "./lib/flags.js",
-    "./obj": "./lib/obj/index.js",
-    "./opt": "./lib/opt.js",
-    "./modules": "./lib/modules.js",
-    "./meta": "./lib/meta.js",
     "./enum": "./lib/enum.js",
+    "./flags": "./lib/flags.js",
+    "./meta": "./lib/meta.js",
+    "./modules": "./lib/modules.js",
+    "./obj": "./lib/obj/index.js",
     "./observable": "./lib/observable.js",
+    "./opt": "./lib/opt.js",
+    "./strings": "./lib/strings.js",
+    "./types": "./lib/types/index.js",
+
     "./package.json": "./package.json"
   },
   "license": "MIT",

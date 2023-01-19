@@ -1,6 +1,5 @@
 # TODO
 
-- core.context.isNode and .isBrowser break when using webpack!
 - Proper tests using new [@lumjs/tests](https://github.com/supernovus/lum.tests.js) library.
   - [x] `types/js`
   - [x] `types/basics` 
