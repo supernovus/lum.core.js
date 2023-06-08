@@ -14,6 +14,11 @@ const a1 = ['hello', 'darkness', 'my', 'old', 'friend'];
 arr.removeItems(a1, 'darkness');
 t.isJSON(a1, ['hello','my','old','friend'], 'removeFromArray(...)');
 
+// TODO: 
+// - test containsAny/containsAll/removeItems with `Set` and `Map` objects.
+// - test `new List(obj)` instances directly.
+// - test powerset() function.
+
 // All done.
 t.done();
 
