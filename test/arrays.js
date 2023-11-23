@@ -18,7 +18,7 @@ t.isJSON(a1, ['hello','my','old','friend'], 'removeFromArray(...)');
 // - test containsAny/containsAll/removeItems with `Set` and `Map` objects.
 // - test `new List(obj)` instances directly.
 // - test powerset() function.
+// - test all 'add' functions and 'add.At' class.
 
 // All done.
 t.done();
-
