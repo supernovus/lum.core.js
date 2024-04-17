@@ -1,16 +1,17 @@
 {
   "name": "@lumjs/core",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "main": "lib/index.js",
   "exports":
   {
     ".": "./lib/index.js",
 
     "./arrays": "./lib/arrays/index.js",
-    "./maps": "./lib/maps.js",
+    "./console": "./lib/console.js",
     "./context": "./lib/context.js",
     "./enum": "./lib/enum.js",
     "./flags": "./lib/flags.js",
+    "./maps": "./lib/maps.js",
     "./meta": "./lib/meta.js",
     "./modules": "./lib/modules.js",
     "./obj": "./lib/obj/index.js",
