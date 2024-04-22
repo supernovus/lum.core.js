@@ -12,7 +12,7 @@ t.ok(!arr.containsAll(['nothing','to','see'], 'nothing', 'here'), '!containsAll(
 
 const a1 = ['hello', 'darkness', 'my', 'old', 'friend'];
 arr.removeItems(a1, 'darkness');
-t.isJSON(a1, ['hello','my','old','friend'], 'removeFromArray(...)');
+t.isJSON(a1, ['hello','my','old','friend'], 'removeItems(...)');
 
 // TODO: 
 // - test containsAny/containsAll/removeItems with `Set` and `Map` objects.
