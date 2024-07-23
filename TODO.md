@@ -17,6 +17,8 @@ for the future would be a good idea. A few of the things I want to do:
   - Cut anything that seems superfluous or rarely used
   - Add ability to copy `Symbol` properties
 - Replace `obj.syncNested` with `obj.sync` using the new `obj.copy` API
+- Move `opt.Opts` into its own separate package
+- Give `observable` some TLC
 
 I will likely update this list a bit before I get around to starting the
 new branch that will eventually become the `2.0.0` release.
