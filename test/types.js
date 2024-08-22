@@ -4,6 +4,8 @@ const plan = 129;
 const t = require('@lumjs/tests').new({module, plan});
 // The types core module
 const types = require('../lib/types');
+// Our console wrapper singleton
+const LC = require('../lib/console');
 
 // A quick reference to the type names.
 const TYP = types.TYPES;
@@ -180,7 +182,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
 }
 
 { // Tests of needs() method.
-  types.console.handler = false;
+  LC.mute();
   let needs = [TYP.S, TYP.N];
   t.lives(() => types.needs('hi', ...needs), 'needs(val, ...types)');
   t.lives(() => types.needs(42, ...needs), ' ^ with second type');
@@ -194,7 +196,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
   needs = [TYP.B, TypeClass];
   t.lives(() => types.needs(true, ...needs), 'needs() → with mixed types/classes');
   t.lives(() => types.needs(subtypeInstance, ...needs), ' ^ with second type/class');
-  types.console.handler = null;
+  LC.restore();
 }
 
 { // Try a few versions of 'def'
@@ -263,7 +265,7 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
   t.ok((obj.hello === 'World' && obj.goodbye === 'Universe'), 'def(obj, {prop1: value1, prop2: value2})')
 
   // Reset the object for some new tests.
-  const td2 = 'def(obj,true)';
+  const td2 = 'def(obj,null,true)';
   obj = {};
   anObj = {value: 'World'};
   td = def(obj, null, true);
@@ -297,4 +299,3 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
 
 // All done.
 t.done();
-

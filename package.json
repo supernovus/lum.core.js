@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.26.0",
+  "version": "1.30.0",
   "main": "lib/index.js",
   "exports":
   {
@@ -16,10 +16,13 @@
     "./modules": "./lib/modules.js",
     "./obj": "./lib/obj/index.js",
     "./observable": "./lib/observable.js",
-    "./opt": "./lib/opt.js",
+    "./opt": "./lib/opt/index.js",
+    "./opt/args": "./lib/opt/args.js",
     "./strings": "./lib/strings.js",
     "./traits": "./lib/traits.js",
     "./types": "./lib/types/index.js",
+    "./types/basics": "./lib/types/basics.js",
+    "./types/def": "./lib/types/def.js",
 
     "./package.json": "./package.json"
   },
@@ -31,7 +34,7 @@
   },
   "devDependencies":
   {
-    "@lumjs/tests": "^1.8.0"
+    "@lumjs/tests": "^2.0.0"
   },
   "scripts":
   {
