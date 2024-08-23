@@ -12,6 +12,7 @@ on the major version changes.
 
 Each major version will be listed here in reverse chronological order (newest first.)
 
+- [2.x](2.x.md) → The next upcoming major release.
 - [1.x](1.x.md) → The first standalone core library.
 - [1.0-beta.x](1.0-beta.md)
   → The *pre-releases* from when this split off of the older 
