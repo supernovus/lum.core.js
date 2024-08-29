@@ -15,6 +15,7 @@
     "./meta": "./lib/meta.js",
     "./modules": "./lib/modules.js",
     "./obj": "./lib/obj/index.js",
+    "./obj/cp": "./lib/obj/cp.js",
     "./observable": "./lib/observable.js",
     "./opt": "./lib/opt/index.js",
     "./opt/args": "./lib/opt/args.js",

@@ -11,12 +11,13 @@ for the future would be a good idea. A few of the things I want to do:
   - `obj.{copyAll,duplicateOne,duplicateAll}`
   - `types.instanceOf` and related options in `types.isa`
   - `<meta>.AbstractClass`
-- Implement a new `obj.copy` API function/class
+- ~~Implement a new `obj.cp` API function/class~~
   - Will completely replace `obj.{clone,copyProps,mergeNested}`
-  - Offer an extended version of the declarative API from `copyProps`
+  - ~~Offer an extended version of the declarative API from `copyProps`~~
   - Cut anything that seems superfluous or rarely used
-  - Add ability to copy `Symbol` properties
-- Replace `obj.syncNested` with `obj.sync` using the new `obj.copy` API
+  - ~~Add ability to copy `Symbol` properties~~
+- ~~Replace `obj.syncNested` with `obj.sync` using the new `obj.copy` API~~
+  - I'm going to drop the sync functionality, it's just bad.
 - Move `opt.Opts` into its own separate package
 - Give `observable` some TLC
 
