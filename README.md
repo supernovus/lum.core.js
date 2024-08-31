@@ -26,7 +26,7 @@ You can compile the documentation using `npm run build-docs`
 which will put the generated docs into the `./docs/api` folder.
 
 ### [Changelog](./docs/changelogs/1.x.md)
-### [TODO](TODO.md)
+### [TODO](./docs/TODO.md)
 ### [Homepage](https://supernovus.github.io/)
 
 ## Official URLs

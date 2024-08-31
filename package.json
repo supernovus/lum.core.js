@@ -2,10 +2,8 @@
   "name": "@lumjs/core",
   "version": "1.30.0",
   "main": "lib/index.js",
-  "exports":
-  {
+  "exports": {
     ".": "./lib/index.js",
-
     "./arrays": "./lib/arrays/index.js",
     "./console": "./lib/console.js",
     "./context": "./lib/context.js",
@@ -24,23 +22,23 @@
     "./types": "./lib/types/index.js",
     "./types/basics": "./lib/types/basics.js",
     "./types/def": "./lib/types/def.js",
-
     "./package.json": "./package.json"
   },
   "license": "MIT",
-  "repository":
-  {
+  "repository": {
     "type": "git",
     "url": "https://github.com/supernovus/lum.core.js.git"
   },
-  "devDependencies":
-  {
+  "devDependencies": {
     "@lumjs/opts": "^1.0.0",
-    "@lumjs/tests": "^2.0.0"
+    "@lumjs/tests": "^2.0.0",
+    "docdash": "^2.0.2",
+    "marked": "^14.1.0"
   },
-  "scripts":
-  {
+  "scripts": {
     "test": "lumtest.js",
-    "build-docs": "jsdoc -c ./jsdoc.json"
+    "build-api-docs": "jsdoc -c ./jsdoc.json",
+    "build-meta-docs": "node ./docs/build.js",
+    "build-docs": "npm run build-meta-docs && npm run build-api-docs"
   }
 }

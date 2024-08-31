@@ -1,15 +1,18 @@
 {
   "tags": 
   {
-    "allowUnknownTags": true
+    "allowUnknownTags": false
   },
   "source":
   {
-    "include": ["./lib"]
+    "include": ["./lib","./docs/src"]
   },
   "opts": 
   {
     "destination": "./docs/api",
+    "template": "node_modules/docdash",
+    "package": "package.json",
+    "readme": "docs/build/README.md",
     "recurse": true
   },
   "plugins": 
@@ -22,12 +25,34 @@
     "monospaceLinks": false,
     "default": 
     {
-      "outputSourceFiles": true
+      "outputSourceFiles": true,
+      "useLongnameInNav": true
     },
-    "path": "ink-docstrap",
-    "theme": "cerulean",
     "navType": "vertical",
     "linenums": true,
     "dateFormat": "YYYY-MM-DD, hh:mm:ss"
+  },
+  "docdash":
+  {
+    "__from": "https://github.com/clenemt/docdash",
+    "collapse": true,
+    "commonNav": true,
+    "private": false,
+    "search": false,
+    "sectionOrder":
+    [
+      "Modules",
+      "Namespaces",
+      "Classes",
+      "Interfaces",
+      "Mixins",
+      "Events",
+      "Externals",
+      "Tutorials"
+    ],
+    "shortenTypes": false,
+    "scopeInOutputPath": false,
+    "nameInOutputPath": false,
+    "versionInOutputPath": false
   }
 }
