@@ -1,6 +1,6 @@
 // Tests of observable API
 
-const plan = 0;
+const plan = 42;
 const t = require('@lumjs/tests').new({module, plan});
 const observable = require('../lib/observable');
 const isObs = observable.is;

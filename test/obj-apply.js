@@ -1,4 +1,4 @@
-const plan = null;
+const plan = 5;
 const t = require('@lumjs/tests').new({module,plan});
 const apply = require('../lib/obj/apply');
 
