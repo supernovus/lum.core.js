@@ -5,8 +5,11 @@
  * @param {module:@lumjs/core/events~Status} [status]
  * This will be a Status object if the callback was called from `emit()`.
  * If it was called from the Registry constructor, this will undefined.
- * @returns {Iterable} Target objects; will be used as the sources for a 
- * new `Set` instance (if the return value is not a `Set` already).
+ * @returns {Set|Array|Iterable} Target objects; `Set` is the preferred
+ * return value, with `Array` as second choice.
+ * 
+ * Technically any kind of iterable object will work, but some functionality
+ * will be limited or unavailable if it's not a `Set` or `Array`.
  */
 
 /**
@@ -52,4 +55,14 @@
  * current target. This property only exists in the status object as
  * it's being used to emit Event objects (so is available to handler
  * callbacks), but NOT in the final status object returned by `emit()`.
+ */
+
+/**
+ * Callback when unregistering a target
+ * @callback module:@lumjs/core/events~UnregisterFn
+ * @this module:@lumjs/core/events.Registry
+ * @param {object} target - The target object being unregistered
+ * @param {object} pmap - TODO: document schema
+ * @param {module:@lumjs/core/events.Registry} `this`
+ * @returns {void} 
  */
