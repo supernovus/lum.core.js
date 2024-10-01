@@ -12,7 +12,8 @@ for the future would be a good idea. A few of the things I want to do:
   - `obj.{clone,copyProps,mergeNested,syncNested}`
   - `types.instanceOf` and related options in `types.isa`
   - `<meta>.AbstractClass`
-  - `observable`
+- Replace `observable` with `events/observable` wrapper.
+- Deprecate `observable` API, but leave compatibility wrapper until `3.x`.
 - ~~Implement a new `obj.cp` API function/class~~
   - ~~Will be able to replace `obj.{clone,copyProps,mergeNested}`~~
   - ~~Offer an extended version of the declarative API from `copyProps`~~

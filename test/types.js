@@ -55,12 +55,16 @@ class DifferentClass {}
 
 const differentInstance = new DifferentClass();
 
-t.ok(types.isInstance(typesInstance, TypeClass), 'isInstance(typeInstance,TypeClass)');
-t.ok(types.isInstance(subtypeInstance, SubtypeClass), 'isInstance(subtypeInstance, SubtypeClass)');
-t.ok(types.isInstance(subtypeInstance, TypeClass), 'isInstance(subtypeInstance, TypeClass)');
-t.ok(!types.isInstance(typesInstance, SubtypeClass), '!isInstance(typeInstance, SubtypeClass)');
-t.ok(!types.isInstance(differentInstance, TypeClass), '!isInstance(differentInstance, TypeClass)');
-t.ok(!types.isInstance(typesInstance, DifferentClass), '!isInstance(typesInstance, DifferentClass)');
+{ // TODO: Deprecated tests will be removed in 2.x
+  LC.mute();
+  t.ok(types.isInstance(typesInstance, TypeClass), 'isInstance(typeInstance,TypeClass)');
+  t.ok(types.isInstance(subtypeInstance, SubtypeClass), 'isInstance(subtypeInstance, SubtypeClass)');
+  t.ok(types.isInstance(subtypeInstance, TypeClass), 'isInstance(subtypeInstance, TypeClass)');
+  t.ok(!types.isInstance(typesInstance, SubtypeClass), '!isInstance(typeInstance, SubtypeClass)');
+  t.ok(!types.isInstance(differentInstance, TypeClass), '!isInstance(differentInstance, TypeClass)');
+  t.ok(!types.isInstance(typesInstance, DifferentClass), '!isInstance(typesInstance, DifferentClass)');
+  LC.restore();
+}
 
 function doesDesc (tests, not=false)
 {

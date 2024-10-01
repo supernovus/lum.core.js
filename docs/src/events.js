@@ -66,3 +66,19 @@
  * @param {module:@lumjs/core/events.Registry} `this`
  * @returns {void} 
  */
+
+/**
+ * Setup function for Event objects
+ * @callback module:@lumjs/core/events~SetupEvent
+ * @this module:@lumjs/core/events.Listener
+ * @param {module:@lumjs/core/events.Event}
+ * @returns {void}
+ */
+
+/**
+ * Setup function for Listener instances
+ * @callback module:@lumjs/core/events~SetupListener
+ * @this module:@lumjs/core/events.Registry
+ * @param {module:@lumjs/core/events.Listener}
+ * @returns {void}
+ */

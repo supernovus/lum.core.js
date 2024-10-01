@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.33.0",
+  "version": "1.34.0",
   "main": "lib/index.js",
   "exports": 
   {
@@ -10,6 +10,7 @@
     "./context": "./lib/context.js",
     "./enum": "./lib/enum.js",
     "./events": "./lib/events/index.js",
+    "./events/observable": "./lib/events/observable.js",
     "./flags": "./lib/flags.js",
     "./maps": "./lib/maps.js",
     "./meta": "./lib/meta.js",
@@ -41,7 +42,8 @@
     "test": "lumtest.js",
     "build-meta": "lum-build",
     "build-jsdoc": "jsdoc -c ./jsdoc.js",
-    "build-docs": "npm run build-meta && npm run build-jsdoc"
+    "build-docs": "npm run build-meta && npm run build-jsdoc",
+    "build": "npm run build-docs"
   },
   "repository": 
   {
