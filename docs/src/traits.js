@@ -44,3 +44,20 @@
  * @prop {boolean} added - Was the property added to the `target` ?
  * 
  */
+
+/**
+ * Trait Registry Interface
+ * 
+ * This descrives the properties and methods added to the objects used
+ * with the {@link module:@lumjs/core/traits.makeRegistry} function.
+ * 
+ * All of the non-constructor function properties are copies bound to
+ * the registry object, and always pass the registry as the first argument.
+ * 
+ * @typedef {object} module:@lumjs/core/traits~Registry
+ * @prop {function} Trait - {@link module:@lumjs/core/traits.Trait Trait constructor}
+ * @prop {function} getTrait - {@link module:@lumjs/core/traits.getTrait}
+ * @prop {function} getTraits - {@link module:@lumjs/core/traits.getTraits}
+ * @prop {function} registerTrait - {@link module:@lumjs/core/traits.registerTrait}
+ */
+
