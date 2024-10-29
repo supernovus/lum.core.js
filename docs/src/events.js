@@ -55,6 +55,7 @@
  * current target. This property only exists in the status object as
  * it's being used to emit Event objects (so is available to handler
  * callbacks), but NOT in the final status object returned by `emit()`.
+ * @prop {module:@lumjs/core/events.Registry} registry 
  */
 
 /**
