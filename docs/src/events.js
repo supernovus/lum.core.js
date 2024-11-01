@@ -41,7 +41,8 @@
 /**
  * Emit process status info
  * @typedef {object} module:@lumjs/core/events~Status
- * @prop {Set.<string>} eventNames - Event names being triggered
+ * @prop {Set.<string>} eventTypes - Event types being triggered
+ * @prop {Set.<string>} eventNames - Alias of `eventTypes`
  * @prop {Set.<object>} targets - From `registry.getTargets()`
  * @prop {bool} multiMatch - `registry.options.multiMatch`
  * @prop {Set} onceRemoved - Any `Listener` that had the `once` rule set;
