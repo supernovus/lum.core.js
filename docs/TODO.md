@@ -49,6 +49,8 @@ I want to split the following (not necessarily in this order):
   - `obj.{clone,copyProps,mergeNested,syncNested}`
   - `obj.{lock,addLock,addClone,cloneIfLocked}`
   - `types.instanceOf` and related options in `types.isa`
+  - `types.unbound.{add,remove}`
+  - `types/unbound/objects` internal list go bye bye
   - `<meta>.AbstractClass`
   - `observable` sub-module
 - Drop all dependencies being used for backwards compatibility,
