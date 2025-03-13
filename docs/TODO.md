@@ -30,8 +30,10 @@ I want to split the following (not necessarily in this order):
   - Deep/recursive copying/cloning is where something like the current
     `obj.cp` _may_ be useful, but even then writing model-specific code
     may actually be the better approach.
+- Replace curent `obj.apply()` function with a simpler version.
+  - Current version can move to `@lumjs/cp` package.
 
-### v1.39.0 Tasks
+### v1.39.x Tasks
 
 - Deprecate `obj.lock()`; it was designed to pair with `obj.clone()`.
   - Just use `Object.seal()` or `Object.freeze()` directly.

@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.37.2",
+  "version": "1.38.0",
   "main": "lib/index.js",
   "exports": 
   {
@@ -17,6 +17,7 @@
     "./modules": "./lib/modules.js",
     "./obj": "./lib/obj/index.js",
     "./obj/cp": "./lib/obj/cp.js",
+    "./obj/df": "./lib/obj/df.js",
     "./observable": "./lib/observable.js",
     "./opt": "./lib/opt/index.js",
     "./opt/args": "./lib/opt/args.js",
