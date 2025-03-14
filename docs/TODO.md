@@ -30,8 +30,9 @@ I want to split the following (not necessarily in this order):
   - Deep/recursive copying/cloning is where something like the current
     `obj.cp` _may_ be useful, but even then writing model-specific code
     may actually be the better approach.
-- Replace curent `obj.apply()` function with a simpler version.
-  - Current version can move to `@lumjs/cp` package.
+- Move curent `obj.apply()` function to `@lumjs/cp` package, adding a
+  deprecated link for the duration of the v1.x lifecycle.
+- Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.
 
 ### v1.39.x Tasks
 
@@ -40,6 +41,7 @@ I want to split the following (not necessarily in this order):
   - `obj.addLock()` and `obj.cloneIfLocked()` are also deprecated.
 - Mark `core.observable()` as deprecated.
   - List `events.observable()` as the _replaced by_ reference.
+- Deprecate `types.def()`, listing `obj.df` as a replacement.
 - Ensure all deprecated functions are using `meta.deprecated()`.
 - Ensure none of the deprecated code is being used by any code
   that will remain in the core package. The core must be standalone!
@@ -52,6 +54,7 @@ I want to split the following (not necessarily in this order):
   - `obj.{lock,addLock,addClone,cloneIfLocked}`
   - `types.instanceOf` and related options in `types.isa`
   - `types.unbound.{add,remove}`
+  - `types.def` and `types.lazy`
   - `types/unbound/objects` internal list go bye bye
   - `<meta>.AbstractClass`
   - `observable` sub-module
