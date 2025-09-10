@@ -32,7 +32,7 @@ I want to split the following (not necessarily in this order):
     may actually be the better approach.
 - Move curent `obj.apply()` function to `@lumjs/cp` package, adding a
   deprecated link for the duration of the v1.x lifecycle.
-- Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.
+- ~~Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.~~
 
 ### v1.39.x Tasks
 
@@ -65,6 +65,9 @@ I want to split the following (not necessarily in this order):
   - `@lumjs/events`
   - `@lumjs/opts` 
   - `@lumjs/traits`
+- Drop the `types/basics` sub-module and change all documentation using it
+  to reference the `types` module directly.
+- Drop the `obj/df` sub-module (including any docs referencing it.)
 
 ## Documentation
 

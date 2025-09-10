@@ -1,5 +1,5 @@
 // Current test count.
-const plan = 103;
+const plan = 106;
 // A new test instance.
 const t = require('@lumjs/tests').new({module, plan});
 // The types core module
@@ -26,12 +26,19 @@ t.ok(types.isScalar(0), 'isScalar(0)');
 t.ok(!types.isScalar({}), '!isScalar({})');
 t.ok(!types.isScalar(null), '!isScalar(null)');
 t.ok(types.isArray([]), 'isArray([])');
-t.ok(types.isTypedArray(new Int8Array(8)), 'isTypedArray(Int8Array)');
 t.ok(types.nonEmptyArray([1,2,3]), 'nonEmptyArray([1,2,3])');
 t.ok(!types.nonEmptyArray([]), '!nonEmptyArray([])');
 t.ok(types.isProperty('hi'), 'isProperty(string)');
 t.ok(types.isProperty(Symbol('hi')), 'isProperty(Symbol)');
-t.ok(!types.isProperty(false), '!isProperty(false)')
+t.ok(!types.isProperty(false), '!isProperty(false)');
+
+{ // Some isTypedArray tests
+  const ab = new ArrayBuffer(2);
+  t.ok(types.isTypedArray(new Uint8Array(8)), 'isTypedArray(Uint8Array)');
+  t.ok(types.isTypedArray(new Float32Array(4)), 'isTypedArray(Float32Array)');
+  t.ok(!types.isTypedArray(ab), '!isTypedArray(ArrayBuffer)');
+  t.ok(!types.isTypedArray(new DataView(ab)), '!isTypedArray(DataView)');
+}
 
 function getArguments() { return arguments; }
 
@@ -203,8 +210,16 @@ t.dies(function(){types.needType(TYP.O, null); return true}, "!needType('object'
   LC.restore();
 }
 
-// TODO: isa() and needs()
-// TODO: stringify()
+/** 
+ * TODO:
+ * - isIterable
+ * - isPlainObject
+ * - isClassObject
+ * - isDiscreteObject
+ * - doesDescriptorTemplate
+ */
+
+// TODO: add `types-isa.js` file covering `isa` and `needs` functions.
 
 // All done.
 t.done();
