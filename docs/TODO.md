@@ -45,6 +45,7 @@ I want to split the following (not necessarily in this order):
 - Ensure all deprecated functions are using `meta.deprecated()`.
 - Ensure none of the deprecated code is being used by any code
   that will remain in the core package. The core must be standalone!
+- Add a full test set for the `obj.df*` functions. 
 
 ### v2.0.0 Release Tasks
 

@@ -2,7 +2,7 @@
 /**
  * Metadata for the property definition.
  * 
- * @typedef module:@lumjs/core/types~LazyDef
+ * @typedef module:@lumjs/core/obj~LazyDef
  * @property {string} name - The `name` passed to `lazy()`
  * @property {(object|function)} target - The `target` passed to `lazy()`
  * @property {object} opts - The `opts` passed to `lazy()`
@@ -38,8 +38,8 @@
 /**
  * A function to generate the property value.
  * 
- * @callback module:@lumjs/core/types~LazyGetter 
- * @param {module:@lumjs/core/types~LazyDef} info - A metadata object.
+ * @callback module:@lumjs/core/obj~LazyGetter 
+ * @param {module:@lumjs/core/obj~LazyDef} info - A metadata object.
  * @returns {*} The generated *value* of the property.
  * 
  * By default if this is `undefined` the value will **not** be
@@ -53,33 +53,33 @@
  * As we are using [df()]{@link module:@lumjs/core/obj.df} 
  * to assign the value, by default if the return value appears 
  * to be a valid *Descriptor* object, it will be used as the 
- * property descriptor. See `def()` for further details on how
+ * property descriptor. See `df()` for further details on how
  * it handles the various arguments.
  * 
  * Regardless of the value of `this.assign`, this value will
  * be *returned* as the property value.
  * 
- * @this {module:@lumjs/core/types~LazyDef} The `info` metadata object
+ * @this {module:@lumjs/core/obj~LazyDef} The `info` metadata object
  */
 
 /**
  * A function to handle attempts at assignment.
  * 
- * Very similar to [LazyGetter]{@link module:@lumjs/core/types~LazyGetter}
+ * Very similar to [LazyGetter]{@link module:@lumjs/core/obj~LazyGetter}
  * but called when property assignment is attempted on the
  * lazy accessor property.
  * 
  * If you explicitly want to forbid assignment, you can throw
  * an `Error` from this function.
  * 
- * @callback module:@lumjs/core/types~LazySetter
+ * @callback module:@lumjs/core/obj~LazySetter
  * @param {*} value - The value attempting to be assigned.
- * @param {module:@lumjs/core/types~LazyDef} info - A metadata object.
+ * @param {module:@lumjs/core/obj~LazyDef} info - A metadata object.
  * @returns {*} The *actual* assignment value.
  * 
  * The same assignment rules apply as in the
- * [LazyGetter]{@link module:@lumjs/core/types~LazyGetter}
+ * [LazyGetter]{@link module:@lumjs/core/obj~LazyGetter}
  * callback (in regards to undefined values, etc.)
  * 
- * @this {module:@lumjs/core/types~LazyDef} The `info` metadata object
+ * @this {module:@lumjs/core/obj~LazyDef} The `info` metadata object
  */
