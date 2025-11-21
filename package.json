@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.38.2",
+  "version": "1.38.3",
   "main": "lib/index.js",
   "exports": 
   {
@@ -31,7 +31,8 @@
   },
   "dependencies": 
   {
-    "@lumjs/opts": "^1.0.0"
+    "@lumjs/opts": "^1.0.0",
+    "@lumjs/events-observable": "^1.0.1"
   },
   "devDependencies": 
   {

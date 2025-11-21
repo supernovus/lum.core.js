@@ -1,6 +1,6 @@
 // Tests of observable API (original implementation)
 
-const {plan,run} = require('./inc/observable');
+const {plan,run} = require('@lumjs/events-observable/tests');
 const origObs = require('../lib/old/observable')
 const t = require('@lumjs/tests').new({module, plan});
 const testOpts = {appendEvent: false}

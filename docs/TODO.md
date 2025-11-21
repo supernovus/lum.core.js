@@ -20,7 +20,7 @@ using the `meta.wrapDepr()` function (same as `opt.Opts` does).
 I think each separate pacakage split will be done as 1.38.x point release.
 I want to split the following (not necessarily in this order):
 
-- Split `events` module into a separate package (`@lumjs/events`).
+- ~~Split `events` module into a separate package (`@lumjs/events`).~~
 - Split `traits` module into a separate package (`@lumjs/traits`).
 - Split `types.stringify` into a separate package (`@lumjs/describe`).
 - Split `obj.cp` into a separate package (`@lumjs/cp`).

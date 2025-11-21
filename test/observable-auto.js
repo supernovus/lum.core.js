@@ -1,11 +1,11 @@
 // Tests of observable API (auto-selected implementation)
 
-const {plan,run} = require('./inc/observable');
+const {plan,run} = require('@lumjs/events-observable/tests');
 const observable = require('../lib/observable');
 const t = require('@lumjs/tests').new({module, plan: plan*2});
 
 // Normal calls should use the new implementation.
-let testOpts = {appendEvent: true}
+let testOpts = {appendEvent: true, canLock: false}
 run(t, observable, testOpts);
 
 // Try the old implementation via the `redefine` arg.
