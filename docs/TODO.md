@@ -33,6 +33,7 @@ I want to split the following (not necessarily in this order):
 - Move curent `obj.apply()` function to `@lumjs/cp` package, adding a
   deprecated link for the duration of the v1.x lifecycle.
 - ~~Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.~~
+- Major refactoring of `context` module, support node.js using ES modules!
 
 ### v1.39.x Tasks
 
