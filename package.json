@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.38.3",
+  "version": "1.38.4",
   "main": "lib/index.js",
   "exports": 
   {
