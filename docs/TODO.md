@@ -1,6 +1,6 @@
 # TODO
 
-**Updated: `2025-12-03`**
+**Updated: `2025-12-18`**
 
 ## v2.x
 
@@ -11,13 +11,17 @@ in their own packages.
 
 This package should be about working with JS types and objects.
 
+I think breaking the usual semantic versioning for the `1.38` and `1.39`
+releases is justified due to them being special, transitional releases
+working toward `1.40` which will be the last planned 1.x release series.
+
 ### v1.38.x Tasks
 
 These releases will all be about splitting bigger (sub-)modules into
 their own packages, and adding temporary compatibility aliases
 using the `meta.wrapDepr()` function (same as `opt.Opts` does).
 
-I think each separate pacakage split will be done as 1.38.x point release.
+Each separate pacakage split will be done as 1.38.x point release.
 I want to split the following (not necessarily in this order):
 
 - ~~Split `events` module into a separate package (`@lumjs/events`).~~
@@ -36,15 +40,24 @@ I want to split the following (not necessarily in this order):
     it can be sub-classed to make specialized implementations.
   - Create a sub-module that exports a singleton `ConsoleWrapper` instance 
     with the same behaviours and options as the current implementation.
-- Split `arrays` module into a separate package (`@lumjs/arrays`).
-- Move curent `obj.apply()` function to `@lumjs/cp` package, adding a
-  deprecated link for the duration of the v1.x lifecycle.
+- Split `arrays` module into a separate package (`@lumjs/lists`).
+  - The `AddAt` class will be merged with the `List` class.
+    Aliases for both existing names will remain here for the 1.x releases.
+- Move curent `obj.cpHandler` function to `@lumjs/cp` package.
 - ~~Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.~~
-- Major refactoring of `context` module, support node.js using ES modules!
-- Move `types.ownCount()` to `obj.ownCount()` as that's where it belongs.
+- ~~Refactor `context` module to support node.js using ES modules.~~
+- ~~Move `types.ownCount()` to `obj.ownCount()` as that's where it belongs.~~
   A deprecated alias will remain for the duration of the 1.x releases.
+- ~~Make a new `node` module that is **NOT** included in the default exports.~~
+  It will be used for any core functionality that is specific to NodeJS.
+- ~~Move `modules` module to `node`, leaving an alias in the 1.x releases.~~
+- ~~The `node/modules` module should support ES Modules as well!~~
 
 ### v1.39.x Tasks
+
+This is the finalization of the cleanup tasks from 1.38.x. 
+It will consist of a bunch of point releases, each one implementing one
+or more items from the below list.
 
 - Deprecate `types.root`, as `globalThis` is in every supported runtime.
 - Deprecate `obj.{copyAll,duplicateOne,duplicateAll}`
@@ -52,15 +65,28 @@ I want to split the following (not necessarily in this order):
 - Deprecate `obj.lock()`; it was designed to pair with `obj.clone()`.
   - Just use `Object.seal()` or `Object.freeze()` directly.
   - `obj.addLock()` and `obj.cloneIfLocked()` are also deprecated.
-- Mark `core.observable()` as deprecated.
-  - List `events.observable()` as the _replaced by_ reference.
+- Mark both `events` and `observable` sub-modules as deprecated.
+  - Use `@lumjs/events` for the former.
+  - Use `@lumjs/events-observable` for the latter.
 - Deprecate `types.def()`, listing `obj.df` as a replacement.
 - Deprecate exporting properties of `meta` into the default module.
   Use `core.meta` or `require('@lumjs/core/meta')` explicitly.
+  (This is done in the documentation, but no wrapDepre() calls yet).
 - Ensure all deprecated functions are using `meta.deprecated()`.
 - Ensure none of the deprecated code is being used by any code
   that will remain in the core package. The core must be standalone!
-- Add a full test set for the `obj.df*` functions.
+- Add tests using [@lumjs/tests] for any modules left in the core package.
+- Ensure DocBlocks for everything in the core package is complete.
+
+### v1.40.x Release(s)
+
+When I'm satisfied with the state of the 1.39.x releases,
+I will release 1.40.0 as the _final_ release of the 1.x series.
+A new `v1.x` branch will be created at this point, and the `main`
+branch will be shifted to `2.x` development.
+
+This release series will go back to proper semantic versioning,
+with point releases being used only for bug fixes.
 
 ### v2.0.0 Release Tasks
 
@@ -92,9 +118,9 @@ I want to split the following (not necessarily in this order):
   it's safe to make v22 the minimum supported version at this point.
   I'd like to move all my code to ES Modules (or TypeScript) going forward,
   so I might as well use a major version bump as a time to start that process!
-- Add a `@lumjs/core/cjs-compat` 
+- Add CJS/ESM interop features to the `@lumjs/core/node` module.`
 
-### v2.x+ Plans
+### Future (v2.x+) Plans
 
 - Deprecate the single-letter type constants (`S,N,F,B`, etc.)
   They make code analysis more difficult, as most editors/tools look for
@@ -103,21 +129,10 @@ I want to split the following (not necessarily in this order):
   or bundlers do any code minimisation/optimisation.
 - The single-letter properties in the `TYPES` object are fine, as they are
   generally only used for the `isa()` and `needs()` runtime type checks.
-
-## Documentation
-
-Go through all the DocBlocks and ensure the documentation is up-to-date and
-good enough to actually be useful.
-
-This would be nice to have finished for the planned `2.x` release.
-
-## Tests
-
-Add tests for all core libraries using [@lumjs/tests] library.
-There's a small set of tests already, but plenty to do yet.
+  Even those functions may be phased out or replaced by something less
+  convoluted eventually, but I'm not too worried about them at this point.
 
 ---
 
-[@lumjs/tests]: https://github.com/supernovus/lum.tests.js 
-[@lumjs/compat]: https://github.com/supernovus/lum.compat.js
+[@lumjs/tests]: https://github.com/supernovus/lum.tests.js
 [@lumjs/dotjs]: https://github.com/supernovus/lum.dotjs.js

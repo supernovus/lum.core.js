@@ -37,18 +37,21 @@
  * @name module:@lumjs/core.stacktrace
  * @function
  * @see module:@lumjs/core/meta.stacktrace
+ * @deprecated use `meta.stacktrace`
  */
 
 /**
  * A simple base class for making *abstract* classes
  * @name module:@lumjs/core.AbstractClass
  * @see module:@lumjs/core/meta.AbstractClass
+ * @deprecated use `meta.AbstractClass`
  */
 
 /**
  * A *factory* for special types of JS `function` constructors
  * @name module:@lumjs/core.Functions
  * @see module:@lumjs/core/meta.Functions
+ * @deprecated use `meta.Functions`
  */
 
 /**
@@ -56,6 +59,7 @@
  * @name module:@lumjs/core.NYI
  * @function
  * @see module:@lumjs/core/meta.NYI
+ * @deprecated use `meta.NYI`
  */
 
 /**
@@ -63,6 +67,7 @@
  * @name module:@lumjs/core.deprecated
  * @function
  * @see module:@lumjs/core/meta.deprecated
+ * @deprecated use `meta.deprecated`
  */
 
 /**
@@ -70,7 +75,8 @@
  * function with a specific message before returning the proxied value.
  * @name module:@lumjs/core.wrapDepr
  * @function
- * @see module:@lumjs/core/meta.wrapDepre
+ * @see module:@lumjs/core/meta.wrapDepr
+ * @deprecated use `meta.wrapDepr`
  */
 
 /**

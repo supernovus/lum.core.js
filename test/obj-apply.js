@@ -1,6 +1,6 @@
 const plan = 5;
 const t = require('@lumjs/tests').new({module,plan});
-const apply = require('../lib/obj/apply');
+const {apply} = require('../lib/obj/apply');
 
 let o1 = {};
 const c1 = {hello: 'world'};
@@ -20,6 +20,9 @@ t.is(o1.olleh, 'dlrow', 'function call using `this`');
 apply(o1, (_,opts) => opts.cp.set({overwrite: true}));
 //apply(o1, console.log);
 apply(o1, c2);
-t.is(o1.hello, c2.hello, 'overwrite enabled via function')
+t.is(o1.hello, c2.hello, 'overwrite enabled via function');
+
+// TODO: add tests for any of the new handler features.
+// TODO: move the tests for the `cp` handler into the @lumjs/cp package.
 
 t.done();
