@@ -34,7 +34,8 @@
   "dependencies": 
   {
     "@lumjs/opts": "^1.0.0",
-    "@lumjs/events-observable": "^1.0.1"
+    "@lumjs/events-observable": "^1.0.1",
+    "semver": "^7.7.3"
   },
   "devDependencies": 
   {
