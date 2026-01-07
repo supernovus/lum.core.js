@@ -110,7 +110,6 @@ with point releases being used only for bug fixes.
   - `@lumjs/traits`
 - Drop the `types/basics` sub-module and change all documentation using it
   to reference the `types` module directly.
-- Drop the `obj/df` sub-module (including any docs referencing it.)
 - Replace all `lazy()` exports with regular ones.
 - Migrate from CommonJS to ES Modules?
   I wrote [@lumjs/dotjs] using ES Modules, using the CommonJS compatibility
@@ -118,7 +117,6 @@ with point releases being used only for bug fixes.
   it's safe to make v22 the minimum supported version at this point.
   I'd like to move all my code to ES Modules (or TypeScript) going forward,
   so I might as well use a major version bump as a time to start that process!
-- Add CJS/ESM interop features to the `@lumjs/core/node` module.`
 
 ### Future (v2.x+) Plans
 
