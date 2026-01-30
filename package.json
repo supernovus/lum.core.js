@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.38.6",
+  "version": "1.38.7",
   "main": "lib/index.js",
   "exports": 
   {
@@ -36,14 +36,16 @@
   "dependencies": 
   {
     "@lumjs/cp": "^1.0.0",
-    "@lumjs/opts": "^1.0.0",
+    "@lumjs/describe": "^1.0.0",
     "@lumjs/events-observable": "^1.0.1",
+    "@lumjs/opts": "^1.0.0",
+    "@lumjs/traits": "^1.0.0",
     "semver": "^7.7.3"
   },
   "devDependencies": 
   {
     "@lumjs/build": "^1.1.0",
-    "@lumjs/tests": "^2.0.0"
+    "@lumjs/tests": "^2.2.0"
   },
   "scripts": 
   {

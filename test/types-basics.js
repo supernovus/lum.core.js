@@ -10,7 +10,7 @@ const LC = require('../lib/console');
 // A quick reference to the type names.
 const TYP = types.TYPES;
 // And the stringify function.
-const stringify = types.stringify;
+const stringify = require('@lumjs/describe');
 
 // Now for some further basics.
 t.ok(types.isObj({}), 'isObj({})');
@@ -62,16 +62,14 @@ class DifferentClass {}
 
 const differentInstance = new DifferentClass();
 
-{ // TODO: Deprecated tests will be removed in 2.x
-  LC.mute();
+LC.muted(() => { // TODO: Deprecated tests will be removed in 2.x
   t.ok(types.isInstance(typesInstance, TypeClass), 'isInstance(typeInstance,TypeClass)');
   t.ok(types.isInstance(subtypeInstance, SubtypeClass), 'isInstance(subtypeInstance, SubtypeClass)');
   t.ok(types.isInstance(subtypeInstance, TypeClass), 'isInstance(subtypeInstance, TypeClass)');
   t.ok(!types.isInstance(typesInstance, SubtypeClass), '!isInstance(typeInstance, SubtypeClass)');
   t.ok(!types.isInstance(differentInstance, TypeClass), '!isInstance(differentInstance, TypeClass)');
   t.ok(!types.isInstance(typesInstance, DifferentClass), '!isInstance(typesInstance, DifferentClass)');
-  LC.restore();
-}
+});
 
 function doesDesc (tests, not=false)
 {

@@ -24,32 +24,19 @@ using the `meta.wrapDepr()` function (same as `opt.Opts` does).
 Each separate pacakage split will be done as 1.38.x point release.
 I want to split the following (not necessarily in this order):
 
-- ~~Split `events` module into a separate package (`@lumjs/events`).~~
-- Split `traits` module into a separate package (`@lumjs/traits`).
-- Split `types.stringify` into a separate package (`@lumjs/describe`).
-- Split `obj.cp` into a separate package (`@lumjs/cp`).
-  - Yes, _I know_ I just added it, but I seriously over-designed it,
-    and it's frankly way too complicated to be a _core_ feature.
-  - For simple things `Object.assign()` is just fine.
-  - Deep/recursive copying/cloning is where something like the current
-    `obj.cp` _may_ be useful, but even then writing model-specific code
-    may actually be the better approach.
-- Split `console` into a separate package (`@lumjs/console`).
-  - Create a new `ConsoleWrapper` class that can do everything the existing
-    singleton can do, but with more flexibility. Unlike the current version,
-    it can be sub-classed to make specialized implementations.
-  - Create a sub-module that exports a singleton `ConsoleWrapper` instance 
-    with the same behaviours and options as the current implementation.
 - Split `arrays` module into a separate package (`@lumjs/lists`).
   - The `AddAt` class will be merged with the `List` class.
     Aliases for both existing names will remain here for the 1.x releases.
-- Move curent `obj.cpHandler` function to `@lumjs/cp` package.
+- ~~Split `events` module into a separate package (`@lumjs/events`).~~
+- ~~Split `traits` module into a separate package (`@lumjs/traits`).~~
+- ~~Split `types.stringify` into a separate package (`@lumjs/describe`).~~
+- ~~Split `obj.cp` into a separate package (`@lumjs/cp`).~~
+- ~~Move curent `obj.cpHandler` function to `@lumjs/cp` package.~~
 - ~~Move `types.lazy()` to `obj.lazy()`, add a temporary (deprecated) link.~~
 - ~~Refactor `context` module to support node.js using ES modules.~~
 - ~~Move `types.ownCount()` to `obj.ownCount()` as that's where it belongs.~~
-  A deprecated alias will remain for the duration of the 1.x releases.
+  ~~A deprecated alias will remain for the duration of the 1.x releases.~~
 - ~~Make a new `node` module that is **NOT** included in the default exports.~~
-  It will be used for any core functionality that is specific to NodeJS.
 - ~~Move `modules` module to `node`, leaving an alias in the 1.x releases.~~
 - ~~The `node/modules` module should support ES Modules as well!~~
 
@@ -129,6 +116,12 @@ with point releases being used only for bug fixes.
   generally only used for the `isa()` and `needs()` runtime type checks.
   Even those functions may be phased out or replaced by something less
   convoluted eventually, but I'm not too worried about them at this point.
+- Possible overhaul of the `console` module:
+  - Create a new `ConsoleWrapper` class that can do everything the existing
+    singleton can do, but with more flexibility. Unlike the current version,
+    it can be sub-classed to make specialized implementations.
+  - Create a sub-module that exports a singleton `ConsoleWrapper` instance 
+    with the same behaviours and options as the current implementation.
 
 ---
 
