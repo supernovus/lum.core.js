@@ -1,3 +1,5 @@
+// TODO: remove this file in v2.0
+
 // Current test count.
 const plan = 5;
 // A new test instance.
@@ -13,12 +15,6 @@ t.ok(!arr.containsAll(['nothing','to','see'], 'nothing', 'here'), '!containsAll(
 const a1 = ['hello', 'darkness', 'my', 'old', 'friend'];
 arr.removeItems(a1, 'darkness');
 t.isJSON(a1, ['hello','my','old','friend'], 'removeItems(...)');
-
-// TODO: 
-// - test containsAny/containsAll/removeItems with `Set` and `Map` objects.
-// - test `new List(obj)` instances directly.
-// - test powerset() function.
-// - test all 'add' functions and 'add.At' class.
 
 // All done.
 t.done();

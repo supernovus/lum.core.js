@@ -24,9 +24,7 @@ using the `meta.wrapDepr()` function (same as `opt.Opts` does).
 Each separate pacakage split will be done as 1.38.x point release.
 I want to split the following (not necessarily in this order):
 
-- Split `arrays` module into a separate package (`@lumjs/lists`).
-  - The `AddAt` class will be merged with the `List` class.
-    Aliases for both existing names will remain here for the 1.x releases.
+- ~~Split most of `arrays` module into a separate package (`@lumjs/lists`).~~
 - ~~Split `events` module into a separate package (`@lumjs/events`).~~
 - ~~Split `traits` module into a separate package (`@lumjs/traits`).~~
 - ~~Split `types.stringify` into a separate package (`@lumjs/describe`).~~
@@ -39,6 +37,8 @@ I want to split the following (not necessarily in this order):
 - ~~Make a new `node` module that is **NOT** included in the default exports.~~
 - ~~Move `modules` module to `node`, leaving an alias in the 1.x releases.~~
 - ~~The `node/modules` module should support ES Modules as well!~~
+
+**Unless I find bugs, `1.38.8` should be the final in the 1.38.x releases.**
 
 ### v1.39.x Tasks
 
