@@ -1,6 +1,6 @@
 {
   "name": "@lumjs/core",
-  "version": "1.38.8",
+  "version": "1.39.0",
   "main": "lib/index.js",
   "exports": 
   {
@@ -25,6 +25,7 @@
     "./observable": "./lib/observable.js",
     "./opt": "./lib/opt/index.js",
     "./opt/args": "./lib/opt/args.js",
+    "./proxy": "./lib/proxy.js",
     "./state": "./lib/state.js",
     "./strings": "./lib/strings.js",
     "./traits": "./lib/traits.js",
