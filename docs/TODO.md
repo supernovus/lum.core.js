@@ -46,12 +46,11 @@ This is the finalization of the cleanup tasks from 1.38.x.
 It will consist of a bunch of point releases, each one implementing one
 or more items from the below list.
 
-- Deprecate `types.root`, as `globalThis` is in every supported runtime.
-- Deprecate `obj.{copyAll,duplicateOne,duplicateAll}`
-- Deprecate `obj.{clone,copyProps,mergeNested,syncNested}`
-- Deprecate `obj.lock()`; it was designed to pair with `obj.clone()`.
-  - Just use `Object.seal()` or `Object.freeze()` directly.
-  - `obj.addLock()` and `obj.cloneIfLocked()` are also deprecated.
+- ~~Deprecate `types.root`, as `globalThis` is in every supported runtime.~~
+- ~~Deprecate `obj.{copyAll,duplicateOne,duplicateAll}`~~
+- ~~Deprecate `obj.{clone,copyProps,mergeNested,syncNested}`~~
+- ~~Deprecate `obj.lock()`; it was designed to pair with `obj.clone()`.~~
+  - ~~`obj.addLock()` and `obj.cloneIfLocked()` are also deprecated.~~
 - Mark both `events` and `observable` sub-modules as deprecated.
   - Use `@lumjs/events` for the former.
   - Use `@lumjs/events-observable` for the latter.
@@ -95,8 +94,6 @@ with point releases being used only for bug fixes.
   - `@lumjs/events`
   - `@lumjs/opts` 
   - `@lumjs/traits`
-- Drop the `types/basics` sub-module and change all documentation using it
-  to reference the `types` module directly.
 - Replace all `lazy()` exports with regular ones.
 - Migrate from CommonJS to ES Modules?
   I wrote [@lumjs/dotjs] using ES Modules, using the CommonJS compatibility

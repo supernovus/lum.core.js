@@ -20,6 +20,7 @@
     "./node/modules": "./lib/node/modules.js",
     "./obj": "./lib/obj/index.js",
     "./obj/apply": "./lib/obj/apply.js",
+    "./obj/basics": "./lib/obj/basics.js",
     "./obj/cp": "./lib/obj/cp.js",
     "./obj/df": "./lib/obj/df.js",
     "./observable": "./lib/observable.js",
@@ -36,7 +37,7 @@
   },
   "dependencies": 
   {
-    "@lumjs/cp": "^1.0.0",
+    "@lumjs/cp": "^1.1.0",
     "@lumjs/describe": "^1.0.0",
     "@lumjs/events-observable": "^1.0.1",
     "@lumjs/lists": "^1.0.0",
